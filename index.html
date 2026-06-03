@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>
-      Inscripción - Chequeo de Selección Anzoátegui | Campeonato Nacional de MTB
+      Inscripción - Chequeo de Selección Nacional | Campeonato Nacional de MTB
     </title>
     <meta
       name="description"
-      content="Formulario oficial de inscripción para el Chequeo de Selección Anzoátegui del Campeonato Nacional de MTB. Registra tus datos y reporta tu pago aquí."
+      content="Formulario oficial de inscripción para el Chequeo de Selección del Campeonato Nacional de MTB. Registra tus datos y reporta tu pago aquí."
     />
     <meta
       name="keywords"
-      content="ciclismo, MTB, Campeonato Nacional de MTB, Anzoátegui, chequeo de selección, inscripción, MovilCycle, campeonato nacional"
+      content="ciclismo, MTB, Campeonato Nacional de MTB, Venezuela, chequeo de selección, inscripción, MovilCycle, campeonato nacional"
     />
     <meta name="author" content="Campeonato Nacional de MTB" />
 
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Inscripción - Chequeo de Selección Anzoátegui | Campeonato Nacional de MTB"
+      content="Inscripción - Chequeo de Selección Nacional | Campeonato Nacional de MTB"
     />
     <meta
       property="og:description"
-      content="Asegura tu cupo. Formulario oficial de inscripción para el chequeo de selección estatal."
+      content="Asegura tu cupo. Formulario oficial de inscripción para el chequeo de selección nacional."
     />
     <meta
       property="og:image"
@@ -62,7 +62,7 @@
           Chequeo de Selección
         </h1>
         <p class="text-yellow-400 font-bold text-xl uppercase mb-2">
-          Estado Anzoátegui
+          Convocatoria Nacional
         </p>
         <p class="text-white font-bold text-sm uppercase mb-2">
           📅 Sábado 16 de Mayo | 📍Parque Andrés Eloy Blanco
@@ -179,33 +179,61 @@
                 class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-500"
               />
             </div>
-            <div class="md:col-span-2">
-              <label
-                for="ciudad"
-                class="block text-sm font-medium text-gray-400 mb-2"
-                >Ciudad de Residencia (Anzoátegui) *</label
-              >
-              <select
-                id="ciudad"
-                name="ciudad"
-                required
-                aria-required="true"
-                class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-500"
-              >
-                <option value="">Selecciona tu ciudad...</option>
-                <option value="Barcelona">Barcelona</option>
-                <option value="Puerto La Cruz">Puerto La Cruz</option>
-                <option value="Lechería">Lechería</option>
-                <option value="Guanta">Guanta</option>
-                <option value="El Tigre">El Tigre</option>
-                <option value="Anaco">Anaco</option>
-                <option value="Cantaura">Cantaura</option>
-                <option value="Píritu">Píritu</option>
-                <option value="San Mateo">San Mateo</option>
-                <option value="San José de Guanipa">San José de Guanipa</option>
-                <option value="Otra">Otra</option>
-              </select>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:col-span-2">
+              <!-- Campo Estado -->
+              <div>
+                <label for="estado" class="block text-sm font-medium text-gray-400 mb-2">Estado de Residencia *</label>
+                <select
+                  id="estado"
+                  name="estado"
+                  required
+                  aria-required="true"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-500"
+                >
+                  <option value="">Selecciona tu estado...</option>
+                  <option value="Amazonas">Amazonas</option>
+                  <option value="Anzoátegui">Anzoátegui</option>
+                  <option value="Apure">Apure</option>
+                  <option value="Aragua">Aragua</option>
+                  <option value="Barinas">Barinas</option>
+                  <option value="Bolívar">Bolívar</option>
+                  <option value="Carabobo">Carabobo</option>
+                  <option value="Cojedes">Cojedes</option>
+                  <option value="Delta Amacuro">Delta Amacuro</option>
+                  <option value="Distrito Capital">Distrito Capital</option>
+                  <option value="Falcón">Falcón</option>
+                  <option value="Guárico">Guárico</option>
+                  <option value="Lara">Lara</option>
+                  <option value="La Guaira">La Guaira</option>
+                  <option value="Mérida">Mérida</option>
+                  <option value="Miranda">Miranda</option>
+                  <option value="Monagas">Monagas</option>
+                  <option value="Nueva Esparta">Nueva Esparta</option>
+                  <option value="Portuguesa">Portuguesa</option>
+                  <option value="Sucre">Sucre</option>
+                  <option value="Táchira">Táchira</option>
+                  <option value="Trujillo">Trujillo</option>
+                  <option value="Yaracuy">Yaracuy</option>
+                  <option value="Zulia">Zulia</option>
+                </select>
+              </div>
+
+              <!-- Campo Ciudad (Texto Libre) -->
+              <div>
+                <label for="ciudad" class="block text-sm font-medium text-gray-400 mb-2">Ciudad *</label>
+                <input
+                  type="text"
+                  id="ciudad"
+                  name="ciudad"
+                  placeholder="Ej: Valencia, Maracay..."
+                  required
+                  aria-required="true"
+                  class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-red-500"
+                />
+              </div>
             </div>
+
           </div>
         </fieldset>
 
@@ -420,7 +448,7 @@
             Al inscribirme en este evento, declaro que estoy físicamente apto
             para participar en competiciones de ciclismo y asumo todos los
             riesgos asociados con mi participación en el "Campeonato Nacional de
-            MTB 2026 - Chequeo de Selección Anzoátegui".
+            MTB 2026 - Chequeo de Selección".
           </p>
           <p>
             Libero de toda responsabilidad a los organizadores, patrocinadores,
