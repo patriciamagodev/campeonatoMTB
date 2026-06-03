@@ -77,6 +77,8 @@ btnCerrarError.addEventListener("click", () => {
 });
 
 // --- LÓGICA DE CATEGORÍAS ---
+const ANO_EVENTO = 2026;
+
 const categoriasDB = [
   // MASCULINO
   { nombre: "PRE INFANTIL A", genero: "Masculino", min: 5, max: 6 },
@@ -199,7 +201,7 @@ function actualizarCategorias() {
 
   if (fechaVal && generoVal) {
     const añoNacimiento = parseInt(fechaVal.split("-")[0]);
-    const edad = 2026 - añoNacimiento;
+    const edad = ANO_EVENTO - añoNacimiento;
 
     const categoriasValidas = categoriasDB.filter(
       (cat) => cat.genero === generoVal && edad >= cat.min && edad <= cat.max,
@@ -267,6 +269,11 @@ document
       // A. SUBIR LA IMAGEN A STORAGE
       const file = formData.get("comprobante");
 
+      // Validación extra para asegurar que es una imagen
+      if (!file.type.startsWith('image/')) {
+        throw new Error("Por favor, sube un archivo de imagen válido.");
+      }
+
       const MAX_SIZE_MB = 3;
       const maxSizeInBytes = MAX_SIZE_MB * 1024 * 1024;
       if (file.size > maxSizeInBytes) {
@@ -308,7 +315,7 @@ document
             fecha_nacimiento: formData.get("fecha_nacimiento"),
             correo: formData.get("correo"),
             telefono: formData.get("telefono"),
-            estado: "Anzoátegui",
+            estado: formData.get("estado"), // Actualizado para capturar el estado dinámico
             ciudad: formData.get("ciudad"),
             genero: formData.get("genero"),
             categoria: formData.get("categoria"),
