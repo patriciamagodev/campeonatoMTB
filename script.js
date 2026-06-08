@@ -25,7 +25,7 @@ async function cargarTasaDinamica() {
       // Guardamos la tasa exitosa en la memoria del navegador
       localStorage.setItem("ultimaTasaBcvConocida", tasa);
 
-      const costoDolares = 5;
+      const costoDolares = 7;
       const totalBs = tasa * costoDolares;
 
       const elementoTasa = document.getElementById("tasaBcv");
@@ -44,7 +44,7 @@ async function cargarTasaDinamica() {
 
     // Si la recuerda, la usamos. Si no, usamos la base actualizada (504.91)
     const tasaEmergencia = tasaGuardada ? parseFloat(tasaGuardada) : 504.91;
-    const costoDolares = 5;
+    const costoDolares = 7;
     const totalBsEmergencia = tasaEmergencia * costoDolares;
 
     const elementoTasa = document.getElementById("tasaBcv");
@@ -81,6 +81,8 @@ const ANO_EVENTO = 2026;
 
 const categoriasDB = [
   // MASCULINO
+  { nombre: "BIKE BALANCE", genero: "Masculino", min: 1, max: 4 },
+
   { nombre: "PRE INFANTIL A", genero: "Masculino", min: 5, max: 6 },
   { nombre: "PREINFANTIL B", genero: "Masculino", min: 7, max: 8 },
   { nombre: "PREINFANTIL C", genero: "Masculino", min: 9, max: 10 },
@@ -89,7 +91,21 @@ const categoriasDB = [
   { nombre: "PRE - JUVENIL", genero: "Masculino", min: 15, max: 16 },
   { nombre: "JUVENIL", genero: "Masculino", min: 17, max: 18 },
   { nombre: "SUB 23", genero: "Masculino", min: 19, max: 22 },
-  { nombre: "ELITE", genero: "Masculino", min: 23, max: 99 },
+  { nombre: "ELITE", genero: "Masculino", min: 23, max: 29 }, // <-- Rango ajustado
+
+  {
+    nombre: "AFICIONADO MENOS DE 40 AÑOS",
+    genero: "Masculino",
+    min: 28,
+    max: 39,
+  }, // <-- Nueva categoría
+  {
+    nombre: "AFICIONADO MAS DE 40 AÑOS",
+    genero: "Masculino",
+    min: 40,
+    max: 99,
+  }, // <-- Nueva categoría
+
   { nombre: "MASTER A", genero: "Masculino", min: 35, max: 39 },
   { nombre: "MASTER B1", genero: "Masculino", min: 40, max: 44 },
   { nombre: "MASTER B2", genero: "Masculino", min: 45, max: 49 },
@@ -98,66 +114,26 @@ const categoriasDB = [
   { nombre: "MASTER D1", genero: "Masculino", min: 60, max: 64 },
   { nombre: "MASTER D2", genero: "Masculino", min: 65, max: 69 },
   { nombre: "MASTER E", genero: "Masculino", min: 70, max: 99 },
-  // MASCULINO E-BIKE
-  {
-    nombre: "E BIKE OPEN MASCULINO 55 N.M.",
-    genero: "Masculino",
-    min: 16,
-    max: 99,
-  },
+
+  /* === MASCULINO E-BIKE (OCULTAS TEMPORALMENTE) ===
+  { nombre: "E BIKE OPEN MASCULINO 55 N.M.", genero: "Masculino", min: 16, max: 99 },
   { nombre: "E BIKE MASTER A 55 N.M.", genero: "Masculino", min: 35, max: 39 },
   { nombre: "E-BIKE MASTER B 55 N.M.", genero: "Masculino", min: 40, max: 44 },
   { nombre: "E-BIKE MASTER C 55 N.M.", genero: "Masculino", min: 50, max: 54 },
-  {
-    nombre: "E BIKE ELITE-OPEN MASCULINO FULL MOTOR",
-    genero: "Masculino",
-    min: 16,
-    max: 99,
-  },
-  {
-    nombre: "E-BIKE JUVENIL FULL MOTOR",
-    genero: "Masculino",
-    min: 17,
-    max: 18,
-  },
+  { nombre: "E BIKE ELITE-OPEN MASCULINO FULL MOTOR", genero: "Masculino", min: 16, max: 99 },
+  { nombre: "E-BIKE JUVENIL FULL MOTOR", genero: "Masculino", min: 17, max: 18 },
   { nombre: "E-BIKE SUB 23 FULL MOTOR", genero: "Masculino", min: 19, max: 22 },
-  {
-    nombre: "E-BIKE MASTER A FULL MOTOR",
-    genero: "Masculino",
-    min: 35,
-    max: 39,
-  },
-  {
-    nombre: "E-BIKE MASTER B1 FULL MOTOR",
-    genero: "Masculino",
-    min: 40,
-    max: 44,
-  },
-  {
-    nombre: "E-BIKE MASTER B2 FULL MOTOR",
-    genero: "Masculino",
-    min: 45,
-    max: 49,
-  },
-  {
-    nombre: "E-BIKE MASTER C1 FULL MOTOR",
-    genero: "Masculino",
-    min: 50,
-    max: 54,
-  },
-  {
-    nombre: "E-BIKE MASTER C2 FULL MOTOR",
-    genero: "Masculino",
-    min: 55,
-    max: 59,
-  },
-  {
-    nombre: "E-BIKE MASTER D FULL MOTOR",
-    genero: "Masculino",
-    min: 60,
-    max: 69,
-  },
+  { nombre: "E-BIKE MASTER A FULL MOTOR", genero: "Masculino", min: 35, max: 39 },
+  { nombre: "E-BIKE MASTER B1 FULL MOTOR", genero: "Masculino", min: 40, max: 44 },
+  { nombre: "E-BIKE MASTER B2 FULL MOTOR", genero: "Masculino", min: 45, max: 49 },
+  { nombre: "E-BIKE MASTER C1 FULL MOTOR", genero: "Masculino", min: 50, max: 54 },
+  { nombre: "E-BIKE MASTER C2 FULL MOTOR", genero: "Masculino", min: 55, max: 59 },
+  { nombre: "E-BIKE MASTER D FULL MOTOR", genero: "Masculino", min: 60, max: 69 },
+  ================================================ */
+
   // FEMENINO
+  { nombre: "BIKE BALANCE", genero: "Femenino", min: 1, max: 4 },
+
   { nombre: "PRE INFANTIL A", genero: "Femenino", min: 5, max: 6 },
   { nombre: "PREINFANTIL B", genero: "Femenino", min: 7, max: 8 },
   { nombre: "PREINFANTIL C", genero: "Femenino", min: 9, max: 10 },
@@ -166,7 +142,16 @@ const categoriasDB = [
   { nombre: "PRE - JUVENIL", genero: "Femenino", min: 15, max: 16 },
   { nombre: "JUVENIL", genero: "Femenino", min: 17, max: 18 },
   { nombre: "SUB 23", genero: "Femenino", min: 19, max: 22 },
-  { nombre: "ELITE", genero: "Femenino", min: 23, max: 99 },
+  { nombre: "ELITE", genero: "Femenino", min: 23, max: 29 }, // <-- Rango ajustado
+
+  {
+    nombre: "AFICIONADO MENOS DE 40 AÑOS",
+    genero: "Femenino",
+    min: 28,
+    max: 39,
+  }, // <-- Nueva categoría
+  { nombre: "AFICIONADO MAS DE 40 AÑOS", genero: "Femenino", min: 40, max: 99 }, // <-- Nueva categoría
+
   { nombre: "FEMENINO A", genero: "Femenino", min: 35, max: 39 },
   { nombre: "FEMENINO B1", genero: "Femenino", min: 40, max: 44 },
   { nombre: "FEMENINO B2", genero: "Femenino", min: 45, max: 49 },
@@ -174,21 +159,13 @@ const categoriasDB = [
   { nombre: "FEMENINO C2", genero: "Femenino", min: 55, max: 59 },
   { nombre: "FEMENINO D1", genero: "Femenino", min: 60, max: 69 },
   { nombre: "FEMENINO D2", genero: "Femenino", min: 70, max: 99 },
-  // FEMENINO E-BIKE
-  {
-    nombre: "E BIKE OPEN FEMENINO 55 N.M.",
-    genero: "Femenino",
-    min: 16,
-    max: 99,
-  },
-  {
-    nombre: "E BIKE ELITE-OPEN FEMENINO FULL MOTOR",
-    genero: "Femenino",
-    min: 16,
-    max: 99,
-  },
+
+  /* === FEMENINO E-BIKE (OCULTAS TEMPORALMENTE) ===
+  { nombre: "E BIKE OPEN FEMENINO 55 N.M.", genero: "Femenino", min: 16, max: 99 },
+  { nombre: "E BIKE ELITE-OPEN FEMENINO FULL MOTOR", genero: "Femenino", min: 16, max: 99 },
   { nombre: "E-BIKE JUVENIL FULL MOTOR", genero: "Femenino", min: 17, max: 18 },
   { nombre: "E-BIKE MASTER FULL MOTOR", genero: "Femenino", min: 35, max: 39 },
+  ================================================ */
 ];
 
 const fechaInput = document.getElementById("fechaNacimiento");
@@ -270,7 +247,7 @@ document
       const file = formData.get("comprobante");
 
       // Validación extra para asegurar que es una imagen
-      if (!file.type.startsWith('image/')) {
+      if (!file.type.startsWith("image/")) {
         throw new Error("Por favor, sube un archivo de imagen válido.");
       }
 
