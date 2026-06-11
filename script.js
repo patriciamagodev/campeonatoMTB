@@ -292,13 +292,14 @@ document
             fecha_nacimiento: formData.get("fecha_nacimiento"),
             correo: formData.get("correo"),
             telefono: formData.get("telefono"),
-            estado: formData.get("estado"), // Actualizado para capturar el estado dinámico
+            estado: formData.get("estado"),
             ciudad: formData.get("ciudad"),
             genero: formData.get("genero"),
             categoria: formData.get("categoria"),
             equipo: formData.get("equipo"),
             referencia: formData.get("referencia"),
             comprobante_url: publicUrl,
+            status_pago: "Pendiente", // <-- ESTA LÍNEA CONECTA CON TU ADMIN
           },
         ]);
 
